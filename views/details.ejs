@@ -1,0 +1,38 @@
+<%- include("partials/header") -%>
+
+<div class="columns is-centered">
+  <div class="column is-narrow">
+    <div class="table-container">
+      <h1 class="title has-text-centered">Üksikisiku andmed</h1>
+      <table class="table is-striped">
+        <thead>
+          <tr>
+            <th>Eesnimi</th>
+            <th>Perenimi</th>
+            <th>Sugu</th>
+            <th class="text is-centered">Sünnipäev</th>
+            <th>Päritolu riik</th>
+            <th>e-post</th>
+            <th>Ettevõte</th>
+            <th>HEX-kood</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= data.Firstname %></td>
+            <td><%= data.Lastname%></td>
+            <td><%= data.Gender%></td>
+            <td class="text is-centered"><%= myfuncs.convertDate(data.Birthdate)%></td>
+            <td><%= data.Country%></td>
+            <td><%= myfuncs.emailCreation(data.Firstname, data.Lastname, data.Company)%></td>
+            <td><%= data.Company%></td>
+            <td bgcolor="<%= data.Color %>"><%= data.Color.toUpperCase()%></td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+<%- include("partials/footer.ejs") -%>
