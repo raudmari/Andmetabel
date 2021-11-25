@@ -10,7 +10,7 @@
             <th>Eesnimi</th>
             <th>Perenimi</th>
             <th>Sugu</th>
-            <th class="text is-centered">Sünnipäev</th>
+            <th class="text-has-centered">Sünnipäev</th>
             <th>Päritolu riik</th>
             <th>e-post</th>
             <th>Ettevõte</th>
@@ -22,7 +22,7 @@
             <td><%= data.Firstname %></td>
             <td><%= data.Lastname%></td>
             <td><%= data.Gender%></td>
-            <td class="text is-centered"><%= myfuncs.convertDate(data.Birthdate)%></td>
+            <td class="text-has-centered"><%= myfuncs.convertDate(data.Birthdate)%></td>
             <td><%= data.Country%></td>
             <td><%= myfuncs.emailCreation(data.Firstname, data.Lastname, data.Company)%></td>
             <td><%= data.Company%></td>
