@@ -2,57 +2,57 @@
 
 <div class="columns is-centered">
   <div class="column is-narrow">
+    <h1 class="title has-text-centered">Kõik andmed</h1>
     <div class="table-container">
-      <h1 class="title has-text-centered">Kõik andmed</h1>
-      <table id="myTable" class="table is-striped">
-      <thead>
-        <tr>
-          <th>Jrk</th>
-          <th>Eesnimi</th>
-          <th>Perenimi</th>
-          <th>Sugu</th>
-          <th class="has-text-centered">Sünnipäev</th>
-          <th>Päritolu riik</th>
-          <th>e-post</th>
-          <th>Ettevõte</th>
-          <th>HEX-kood</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% let i = 0;
+      <table class="table is-striped">
+        <thead>
+          <tr>
+            <th>Jrk</th>
+            <th>Eesnimi</th>
+            <th>Perenimi</th>
+            <th>Sugu</th>
+            <th class="has-text-centered">Sünnipäev</th>
+            <th>Päritolu riik</th>
+            <th>e-post</th>
+            <th>Ettevõte</th>
+            <th>HEX-kood</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% let i = 0;
               for(let jd of jsonData) {
                 x = myfuncs.allData(jsonData, i);
                 i++;
                 if(x == true) { %>
-        <tr class="clickable" style="cursor: pointer" onclick="window.location='/<%= jd.ID %>'">
-          <td><%= i%></td>
-          <td><%= jd.Firstname%></td>
-          <td><%= jd.Lastname%></td>
-          <td><%= jd.Gender%></td>
-          <td class="has-text-centered"><%= myfuncs.convertDate(jd.Birthdate)%></td>
-          <td><%= jd.Country%></td>
-          <td><%= myfuncs.emailCreation(jd.Firstname, jd.Lastname, jd.Company)%></td>
-          <td><%= jd.Company%></td>
-          <td bgcolor=<%= jd.Color%>><%= jd.Color.toUpperCase()%></td>
-        </tr>
-        <% } else { %>
-        <tr>
-          <td><%= i %></td>
-          <td><%= jd.Firstname %></td>
-          <td><%= jd.Lastname %></td>
-          <td><%= jd.Gender %></td>
-          <td class="has-text-centered"><%= myfuncs.convertDate(jd.Birthdate)%></td>
-          <td><%= jd.Country%></td>
-          <td><%= myfuncs.emailCreation(jd.Firstname, jd.Lastname, jd.Company)%></td>
-          <td><%= jd.Company%></td>
-          <td bgcolor=<%= jd.Color %>> <%= jd.Color.toUpperCase()%></td>
-        </tr>
-        <% }
+          <tr class="clickable" style="cursor: pointer" onclick="window.location='/<%= jd.ID %>'">
+            <td><%= i%></td>
+            <td><%= jd.Firstname%></td>
+            <td><%= jd.Lastname%></td>
+            <td><%= jd.Gender%></td>
+            <td class="has-text-centered"><%= myfuncs.convertDate(jd.Birthdate)%></td>
+            <td><%= jd.Country%></td>
+            <td><%= myfuncs.emailCreation(jd.Firstname, jd.Lastname, jd.Company)%></td>
+            <td><%= jd.Company%></td>
+            <td bgcolor=<%= jd.Color%>><%= jd.Color.toUpperCase()%></td>
+          </tr>
+          <% } else { %>
+          <tr>
+            <td><%= i %></td>
+            <td><%= jd.Firstname %></td>
+            <td><%= jd.Lastname %></td>
+            <td><%= jd.Gender %></td>
+            <td class="has-text-centered"><%= myfuncs.convertDate(jd.Birthdate)%></td>
+            <td><%= jd.Country%></td>
+            <td><%= myfuncs.emailCreation(jd.Firstname, jd.Lastname, jd.Company)%></td>
+            <td><%= jd.Company%></td>
+            <td bgcolor=<%= jd.Color %>> <%= jd.Color.toUpperCase()%></td>
+          </tr>
+          <% }
           } %>
-      </tbody>
+        </tbody>
 
-    </table>
+      </table>
+    </div>
   </div>
 </div>
-  </div>
 <%- include("partials/footer") -%>
