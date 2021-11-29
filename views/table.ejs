@@ -33,7 +33,7 @@
             <td><%= jd.Country%></td>
             <td><%= myfuncs.emailCreation(jd.Firstname, jd.Lastname, jd.Company)%></td>
             <td><%= jd.Company%></td>
-            <td bgcolor=<%= jd.Color%>><%= jd.Color.toUpperCase()%></td>
+            <td style = background-color:<%= jd.Color%>><%= jd.Color.toUpperCase()%></td>
           </tr>
           <% } else { %>
           <tr>
@@ -45,7 +45,7 @@
             <td><%= jd.Country%></td>
             <td><%= myfuncs.emailCreation(jd.Firstname, jd.Lastname, jd.Company)%></td>
             <td><%= jd.Company%></td>
-            <td bgcolor=<%= jd.Color %>> <%= jd.Color.toUpperCase()%></td>
+            <td style = background-color:<%= jd.Color%>> <%= jd.Color.toUpperCase()%></td>
           </tr>
           <% }
           } %>
